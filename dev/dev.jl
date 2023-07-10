@@ -1,0 +1,3 @@
+using WordList
+
+WordList.greet()
