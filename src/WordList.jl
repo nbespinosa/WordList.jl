@@ -1,5 +1,5 @@
 module WordList
 
-greet() = print("Hello World!")
+include("utils.jl")
 
 end # module WordList
