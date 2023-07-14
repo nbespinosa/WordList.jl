@@ -1,14 +1,49 @@
+
 using WordList
 
-## ---
 let
-    # 1. Definir el conjunto de archivos que usaremos como fuente de palabras
-    # 2. Hacer una function que lea estos archivos in los mezcle en un unico vector de palabras. Que no hayan palabras repetidas.
-    # 3. Una funcion que te devuelva todas las palabras de un largo dado y que se puedan construir con un grupo de letras dado.
+    fn = "/home/nayeris/.julia/dev/WordList/store/blablo.txt"
+    words = load_words(fn)
+    println.(words)
+    typeof(words)
 
-    fn = "/home/nayeris/.julia/dev/WordList/store/diccionario-espanol-txt-master/0_palabras_todas.txt"
-    load_words(fn)
-    # words[10]
+    println("for (version 2)")
+    for wordindex in eachindex(words)
+        println(wordindex, ": ", words[wordindex]) 
+     end
+    
+     for word in words
+        esConA = startswith(word, "a") 
+        if esConA
+            println(word)
+        end
+    end
+
+    function building_words(letters, words)
+    build_words = []
+        for word in words
+        available_letters = copy(letters)
+        is_build = true
+            if is_build
+                push!(build_words, word)
+            end
+        end
+        letters = ['b', 'o', 'y'] 
+        build_words = building_words(letters, words) # return built_words, letters = ['b', 'y', 'o']
+        println(build_words)
+    end
+
+    # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+    function large_words(t, len)
+    yes_words = []
+        for word in words
+            if length(word) == len
+                push!(yes_words, word)
+            end
+        end
+        return yes_words
+    end
+    t = words
+    large_words(words, 3)
 end
-
-## 
