@@ -1,0 +1,82 @@
+using WordList
+
+let
+    fn = "/home/nayeris/.julia/dev/WordList/store/blablo.txt"
+    words = load_words(fn)    
+    println.(words) 
+    typeof(words)  
+end
+
+
+    println("for (version 2)")
+     for wordindex in eachindex(words)
+        println(wordindex, ": ", words[wordindex]) 
+     end
+    
+     for word in words
+        esConA = startswith(word, "a") 
+        if esConA
+            println(word)
+        end
+    end
+
+function building_words(letters)
+    println("Hi")
+    build_words = []
+    for word in words
+        available_letters = copy(letters)
+        is_build = true
+        if is_build
+            push!(build_words, word)
+        end
+    end
+end
+    letters = ['b', 'o', 'y']
+
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+fn = "/home/nayeris/.julia/dev/WordList/store/blablo.txt"
+words = load_words(fn)    
+println.(words) 
+typeof(words)
+
+function large_words(t, len)
+    yes_words =[]
+    #println(yes_words)
+    for word in words
+        if length(word) == len
+            push!(yes_words, word)
+            #push!()
+        end
+    end
+    println(yes_words)
+    return yes_words
+end
+t = words
+
+a=large_words(words,4) 
+
+function building_words(o)
+    println("Hi")
+    build_words = []
+    for word in words
+        available_letters = copy(letters)
+        is_build = true
+        if is_build
+            push!(build_words, word)
+        end
+    end
+    return build_words
+end
+letters = ['b', 'o', 'y']
+o = letters
+
+
+    fn = "/home/nayeris/.julia/dev/WordList/store/blablo.txt"
+    words = load_words(fn)    
+    println.(words) 
+    typeof(words)  
+
+cris = "Pedro"
+
+fjjg = 1424363
